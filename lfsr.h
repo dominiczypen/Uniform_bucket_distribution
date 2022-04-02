@@ -13,7 +13,7 @@ void lfsr(uint64_t* up)
 {
   uint64_t new_bit = ( (*up) ^ ((*up) >> 3) ^ ((*up) >> 30) ^ 
 	             ((*up) >> 55) ) & 1u; 
-	// don't have to map '+1' in polynomial
+        // don't have to map '+1' in polynomial
   *up = ((*up) >> 1) | (new_bit << 63); 
         // shift *up by 1 to RIGHT and insert new_bit at "empty" position
 }
